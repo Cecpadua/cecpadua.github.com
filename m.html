@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
+    <title>Collapsible - Materialize</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="http://materializecss.com/images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="http://materializecss.com/images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+    <link href="http://materializecss.com/css/prism.css" rel="stylesheet">
+    <link href="http://materializecss.com/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style type="text/css">.txlive {display: none;}
+</style>
+	<style type="text/css">.txlive-langselector { position:fixed;z-index:999999;min-width: 120px;line-height:32px;background-color:rgba( 0,0,0,0.75 );box-shadow: 0 0 4px rgba( 0,0,0,0.3 );color: #fff;font-size: 14px;font-family: inherit; }.txlive-langselector * { margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;border-radius: 0;-moz-border-radius:0;-webkit-border-radius:0;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-border-radius:0;opacity:1; }.txlive-langselector.txlive-langselector-topleft { top:0;left:0;right:auto;bottom:auto;border-radius: 0 0 2px 0;-moz-border-radius: 0 0 2px 0;-webkit-border-radius: 0 0 2px 0; }.txlive-langselector.txlive-langselector-topright { top:0;left:auto;right:0;bottom:auto;border-radius: 0 2px 0 0;-moz-border-radius: 0 2px 0 0;-webkit-border-radius: 0 2px 0 0; }.txlive-langselector.txlive-langselector-bottomleft { top:auto;left:0;right:auto;bottom:0;border-radius: 0 2px 0 0;-moz-border-radius: 0 2px 0 0;-webkit-border-radius: 0 2px 0 0; }.txlive-langselector.txlive-langselector-bottomright { top:auto;left:auto;right:0;bottom:0;border-radius: 2px 0 0 0;-moz-border-radius: 2px 0 0 0;-webkit-border-radius: 2px 0 0 0; }.txlive-langselector .txlive-langselector-toggle { overflow: hidden;display: block;padding:2px 16px;width: 100%;height:36px;cursor:pointer;cursor:hand; }.txlive-langselector.txlive-langselector-topleft .txlive-langselector-toggle { overflow: hidden;display: block;border-top:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }.txlive-langselector.txlive-langselector-topright .txlive-langselector-toggle { overflow: hidden;display: block;border-top:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }.txlive-langselector.txlive-langselector-bottomleft .txlive-langselector-toggle { overflow: hidden;display: block;border-bottom:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }.txlive-langselector.txlive-langselector-bottomright .txlive-langselector-toggle { overflow: hidden;display: block;border-bottom:2px solid #006f9f;padding:2px 16px;height:36px;line-height:32px;cursor:pointer;cursor:hand; }.txlive-langselector .txlive-langselector-current { float: left;padding: 0;max-width: 200px;overflow:hidden;white-space: nowrap;text-overflow:ellipsis; }.txlive-langselector .txlive-langselector-marker { float: right;display: block;position:relative;width:0;height:0;margin-left:8px;margin-top: 13px;border-right:4px dashed transparent;border-left:4px dashed transparent;}.txlive-langselector-topright .txlive-langselector-marker,.txlive-langselector-topleft .txlive-langselector-marker {border-top:4px solid #fff;}.txlive-langselector-bottomright .txlive-langselector-marker,.txlive-langselector-bottomleft .txlive-langselector-marker {border-bottom:4px solid #fff;}.txlive-langselector-list { position:absolute;width: 100%;margin:0;padding:10px 0;display:none;background-color:#eaf1f7;box-shadow: 0 0 4px rgba( 0,0,0,0.3 );color:#666;list-style-type:none; }.txlive-langselector-list.txlive-langselector-list-opened { display:block; }.txlive-langselector-list > li {padding:0 16px;width:100%;overflow:hidden;white-space: nowrap;text-overflow:ellipsis;}.txlive-langselector-list > li:hover {background-color:#b0b9c1;color:#fff;cursor:pointer;cursor:hand;}.txlive-langselector-topright > .txlive-langselector-list {top:40px;left:auto;right:0;bottom:auto;border-bottom: 1px solid #f4f7f9;}.txlive-langselector-topleft > .txlive-langselector-list {top:40px;left:0;right:auto;bottom:auto;border-bottom: 1px solid #f4f7f9;}.txlive-langselector-bottomright > .txlive-langselector-list {top:auto;left:auto;right:0;bottom:40px;border-top: 1px solid #f4f7f9;}.txlive-langselector-bottomleft > .txlive-langselector-list {top:auto;left:0;right:auto;bottom:40px;border-top: 1px solid #f4f7f9;}.txlive-langselector-topright > .txlive-langselector-list,.txlive-langselector-bottomright > .txlive-langselector-list {border-radius: 2px 0 0 2px;-moz-border-radius: 2px 0 0 2px;-webkit-border-radius: 2px 0 0 2px;}.txlive-langselector-topleft > .txlive-langselector-list,.txlive-langselector-bottomleft > .txlive-langselector-list {border-radius: 0 2px 2px 0;-moz-border-radius: 0 2px 2px 0;-webkit-border-radius: 0 2px 2px 0;}</style></head>
+  <body>
+    <header>
+      <div class="fixed-announcement">
+        <div class="announcement">
+          <div class="container">Version 1.0 is coming soon! See this<a href="https://github.com/Dogfalo/materialize/issues/5004"> GitHub post</a> for more information.</div>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title">Collapsible</a></div>
+        </div>
+      </nav>
+      <div class="container"><a href="http://materializecss.com/collapsible.html#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; transform: translateX(-100%);">
+        <li class="logo"><a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="http://materializecss.com/res/materialize.svg">Your browser does not support SVG</object></a></li>
+        <li class="search">
+          <div class="search-wrapper card">
+            <input id="search" disabled=""><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+        <li class="bold"><a href="http://materializecss.com/about.html" class="waves-effect waves-teal">关于</a></li>
+        <li class="bold"><a href="http://materializecss.com/getting-started.html" class="waves-effect waves-teal">开始使用</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-teal">CSS</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="http://materializecss.com/color.html">颜色</a></li>
+                  <li><a href="http://materializecss.com/grid.html">Grid</a></li>
+                  <li><a href="http://materializecss.com/helpers.html">Helpers</a></li>
+                  <li><a href="http://materializecss.com/media-css.html">Media</a></li>
+                  <li><a href="http://materializecss.com/pulse.html">Pulse</a></li>
+                  <li><a href="http://materializecss.com/sass.html">Sass</a></li>
+                  <li><a href="http://materializecss.com/shadow.html">Shadow</a></li>
+                  <li><a href="http://materializecss.com/table.html">Table</a></li>
+                  <li><a href="http://materializecss.com/css-transitions.html">Transitions</a></li>
+                  <li><a href="http://materializecss.com/typography.html">Typography</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-teal">Components</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="http://materializecss.com/badges.html">Badges</a></li>
+                  <li><a href="http://materializecss.com/buttons.html">Buttons</a></li>
+                  <li><a href="http://materializecss.com/breadcrumbs.html">Breadcrumbs</a></li>
+                  <li><a href="http://materializecss.com/cards.html">Cards</a></li>
+                  <li><a href="http://materializecss.com/chips.html">Chips</a></li>
+                  <li><a href="http://materializecss.com/collections.html">Collections</a></li>
+                  <li><a href="http://materializecss.com/footer.html">Footer</a></li>
+                  <li><a href="http://materializecss.com/forms.html">Forms</a></li>
+                  <li><a href="http://materializecss.com/icons.html">Icons</a></li>
+                  <li><a href="http://materializecss.com/navbar.html">Navbar</a></li>
+                  <li><a href="http://materializecss.com/pagination.html">Pagination</a></li>
+                  <li><a href="http://materializecss.com/preloader.html">Preloader</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold active"><a class="collapsible-header active waves-effect waves-teal">JavaScript</a>
+              <div class="collapsible-body" style="display: block;">
+                <ul>
+                  <li><a href="http://materializecss.com/carousel.html">Carousel</a></li>
+                  <li class="active"><a href="http://materializecss.com/collapsible.html">Collapsible</a></li>
+                  <li><a href="http://materializecss.com/dialogs.html">Dialogs</a></li>
+                  <li><a href="http://materializecss.com/dropdown.html">Dropdown</a></li>
+                  <li><a href="http://materializecss.com/feature-discovery.html">FeatureDiscovery</a></li>
+                  <li><a href="http://materializecss.com/media.html">Media</a></li>
+                  <li><a href="http://materializecss.com/modals.html">Modals</a></li>
+                  <li><a href="http://materializecss.com/parallax.html">Parallax</a></li>
+                  <li><a href="http://materializecss.com/pushpin.html">Pushpin</a></li>
+                  <li><a href="http://materializecss.com/scrollfire.html">ScrollFire</a></li>
+                  <li><a href="http://materializecss.com/scrollspy.html">Scrollspy</a></li>
+                  <li><a href="http://materializecss.com/side-nav.html">SideNav</a></li>
+                  <li><a href="http://materializecss.com/tabs.html">Tabs</a></li>
+                  <li><a href="http://materializecss.com/transitions.html">Transitions</a></li>
+                  <li><a href="http://materializecss.com/waves.html">Waves</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Mobile</a></li>
+        <li class="bold"><a href="http://materializecss.com/showcase.html" class="waves-effect waves-teal">展示</a></li>
+        <li class="bold"><a href="http://materializecss.com/themes.html" class="waves-effect waves-teal">Themes<span class="new badge"></span></a></li>
+      </ul>
+    </header>
+    <main><div class="container">
+		<div class="row">
+
+		  <div class="col s12 m9 l10">
+
+			<div id="introduction" class="section scrollspy">
+			  <h4>简介</h4>
+			  <p class="caption">Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user. </p><ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+			  </ul>
+			</div>
+
+			<div id="popout" class="section scrollspy">
+			  <h4>Popout</h4>
+			  <p class="caption">To create a popout collapsible, just add the class <code class=" language-markup">popout</code>. </p><ul class="collapsible popout collapsible-accordion" data-collapsible="accordion">
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">subtitles</i>First</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+				<li class="active">
+				  <div class="collapsible-header active"><i class="material-icons">games</i>Second</div>
+				  <div class="collapsible-body" style="display: block;"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">library_books</i>Third</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+			  </ul>
+			  <pre class=" language-markup"><code class=" language-markup">
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible popout<span class="token punctuation">"</span></span> <span class="token attr-name">data-collapsible</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>accordion<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+				</code></pre>
+			</div>
+
+
+
+			<div id="structure" class="section scrollspy">
+			  <h4>Collapsible HTML Structure</h4>
+			  <pre class=" language-markup"><code class=" language-markup">
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible<span class="token punctuation">"</span></span> <span class="token attr-name">data-collapsible</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>accordion<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>filter_drama<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>First<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>place<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>Second<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>whatshot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>Third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+				</code></pre>
+			</div>
+
+			<div id="intialization" class="section scrollspy">
+			  <h4>Initialization</h4>
+			  <span>Collapsible elements only need initialization if they are added dynamically. You can also pass in options inside the initialization, however this can be done in the HTML markup as well.</span>
+			  <pre class=" language-javascript"><code class=" language-javascript">
+				  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.collapsible'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collapsible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				</code></pre>
+
+			  <br><br>
+			  <h5>Preselected Section</h5>
+			  <span>If you want a collapsible with a preopened section just add the <code class=" language-markup">active</code> class to the collapsible-header. </span>
+			  <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+				<li class="active">
+				  <div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
+				  <div class="collapsible-body" style="display: block;"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+				</li>
+			  </ul>
+			  <pre class=" language-markup"><code class=" language-markup">
+				  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible-header active<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>place<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>Second<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+				</code></pre>
+			</div>
+
+			<div id="options" class="scrollspy section">
+			  <h4>选项</h4>
+			  <span>You can customize the behavior of each collapsible using these options. For example, you can call a custom function to run when a collapsbile is opened or closed. The function passes the <span class="language-markup">li</span> element that was opened or closed as an argument.</span>
+			  <pre class=" language-javascript"><code class=" language-javascript">
+				  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.collapsible'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collapsible</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+				  accordion<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// A setting that changes the collapsible behavior to expandable instead of the default accordion style
+				  </span>    onOpen<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Open'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Callback for Collapsible open
+				  </span>    onClose<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Closed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// Callback for Collapsible close
+				  </span>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				</code></pre>
+			</div>
+
+			<div id="methods" class="scrollspy section">
+			  <h4>方法</h4>
+			  <span>You can programmatically open and close collapsibles through these methods. The second parameter is the 0-based index of the collapsible you want to open.</span>
+			  <pre class=" language-javascript"><code class=" language-javascript">
+				  <span class="token comment" spellcheck="true">// Open
+				  </span>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.collapsible'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collapsible</span><span class="token punctuation">(</span><span class="token string">'open'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+				  <span class="token comment" spellcheck="true">// Close
+				  </span>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.collapsible'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collapsible</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+				  <span class="token comment" spellcheck="true">// Destroy
+				  </span>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.collapsible'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collapsible</span><span class="token punctuation">(</span><span class="token string">'destroy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				</code></pre>
+			  <br><br>
+
+			  <h4>Collapsible Types</h4>
+			  <span>There are two ways a collapsible can behave. It can either allow multiple sections to stay open, or it can only allow one section to stay open at a time, which is called an accordion. See below for a demo of each type.</span>
+			</div>
+
+			<div id="accordion" class="section scrollspy">
+			  <div class="row">
+				<div class="col s12 m3"><h5 class="light">Accordion</h5></div>
+				<div class="col s12 m9">
+				  <ul class="collapsible" data-collapsible="accordion">
+					<li>
+					  <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+					  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span></div>
+					</li>
+					<li>
+					  <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+					  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+					</li>
+					<li>
+					  <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+					  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+					</li>
+				  </ul>
+				</div>
+				<div class="col s12 m9 offset-m3">
+				  <span>This is default behavior, but you can explicitly set it by setting the <code class=" language-markup">data-collapsible</code> attribute in HTML.</span>
+				  <pre class=" language-markup"><code class=" language-markup">
+					  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible<span class="token punctuation">"</span></span> <span class="token attr-name">data-collapsible</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>accordion<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+					</code></pre>
+				</div>
+			  </div>
+			</div>
+			<div id="expandable" class="section scrollspy">
+			  <div class="row">
+				<div class="col s12 m3"><h5 class="light">Expandable</h5></div>
+				<div class="col s12 m9">
+				  <ul class="collapsible" data-collapsible="expandable">
+					<li>
+					  <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+					  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+					</li>
+					<li>
+					  <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+					  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+					</li>
+					<li>
+					  <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+					  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+					</li>
+				  </ul>
+				</div>
+				<div class="col s12 m9 offset-m3">
+				  <pre class=" language-markup"><code class=" language-markup">
+					  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>collapsible<span class="token punctuation">"</span></span> <span class="token attr-name">data-collapsible</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>expandable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+					</code></pre>
+				</div>
+			  </div>
+			</div>
+
+		  </div>
+
+
+		  <!-- Table of Contents -->
+		  <div class="col hide-on-small-only m3 l2">
+			<div class="toc-wrapper pin-top" style="top: 0px;">
+			  <div class="buysellads hide-on-small-only">
+				<!-- CarbonAds Zone Code -->
+				<div id="carbonads"><span><span class="carbon-wrap"><a href="http://srv.carbonads.net/ads/click/x/GTND42QECAYD6KJWCV74YKQMCTSIT2QLCKYICZ3JCWYDK5QMCWBDLKQKC6BIT27ECVYI6K3EHJNCLSIZZRLCP7I35MNFV?segment=placement:materializecss;&amp;encredirect=http%3A%2F%2Fwww.launchbit.com%2Ftaz%2F9533-6707-111%2F" class="carbon-img" target="_blank" rel="noopener"><img src="https://launchbit.com/carbon-i/6707-ToptalCarbon123.jpg" alt="" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="http://srv.carbonads.net/ads/click/x/GTND42QECAYD6KJWCV74YKQMCTSIT2QLCKYICZ3JCWYDK5QMCWBDLKQKC6BIT27ECVYI6K3EHJNCLSIZZRLCP7I35MNFV?segment=placement:materializecss;&amp;encredirect=http%3A%2F%2Fwww.launchbit.com%2Ftaz%2F9533-6707-111%2F" class="carbon-text" target="_blank" rel="noopener">Hire the top 3% of vetted, senior-level developers through Toptal. No risk. </a></span><a href="http://carbonads.net/?utm_source=materializecss&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank">ads via Carbon</a><img src="https://www.launchbit.com/carbon-pixel/9533-6707-111/" border="0" height="1" width="1" style="display: none;"></span></div>
+			  </div>
+			  <div style="height: 1px;">
+				<ul class="section table-of-contents">
+				  <li><a href="http://materializecss.com/collapsible.html#introduction" class="active">简介</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#popout">Popout</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#structure">Structure</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#intialization">Initialization</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#options">选项</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#methods">方法</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#accordion">Accordion</a></li>
+				  <li><a href="http://materializecss.com/collapsible.html#expandable">Expandable</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+
+		</div>
+	  </div>
+
+    </main>    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">帮助Materialize发展</h5>
+            <p class="grey-text text-lighten-4">We hope you have enjoyed using Materialize! If you feel Materialize has helped you out and want to support the team, send us over a donation! Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            <form id="paypal-donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+
+
+			  <button class="btn waves-effect waves-light red lighten-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!" disabled="">捐赠</button>
+			</form>
+
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">加入讨论</h5>
+            <p class="grey-text text-lighten-4">We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else you can think of.</p>
+            <a class="btn waves-effect waves-light red lighten-3" target="_blank" href="https://gitter.im/Dogfalo/materialize">聊天</a>
+          </div>
+          <div class="col l4 s12" style="overflow: hidden;">
+            <h5 class="white-text">链接</h5>
+            <iframe src="cid:frame-2-cccba58c-4d34-480c-b822-b300a5ce4332@mhtml.blink" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+            <br>
+            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="cid:frame-8-10b9af7d-525f-492f-ba0c-f8220c80ca48@mhtml.blink" style="position: static; visibility: visible; width: 282px; height: 28px;" data-screen-name="MaterializeCSS"></iframe>
+            <br>
+            <div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 138px; height: 24px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 138px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1507024555645" name="I0_1507024555645" src="cid:frame-5-0c6c6da2-3383-438e-8e4c-d34fded362e7@mhtml.blink" data-gapiattached="true"></iframe></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">© 2014-2017 Materialize, All rights reserved. <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a> </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+
+
+
+
+
+
+
+
+    <!-- Twitter Button -->
+
+
+    <!-- Google Plus Button-->
+
+
+    <!--  Google Analytics  -->
+
+
+
+	<div id="tx-live-lang-container" class="txlive-langselector txlive-langselector-bottomright"><ul id="tx-live-lang-picker" class="txlive-langselector-list notranslate"><li data-value="en">English</li><li data-value="ar">العربية</li><li data-value="zh">中文</li><li data-value="cs">Čeština</li><li data-value="nl">Nederlands</li><li data-value="fr">Français</li><li data-value="de">Deutsch</li><li data-value="ko">한국어</li><li data-value="pt">Português</li><li data-value="ru">Русский</li><li data-value="es">Español</li><li data-value="sv">Svenska</li><li data-value="th">ภาษาไทย</li><li data-value="tr">Türkçe</li></ul><div class="txlive-langselector-toggle notranslate" id="tx-live-lang-toggle"><span class="txlive-langselector-current" id="tx-live-lang-current">中文</span><span class="txlive-langselector-marker"></span></div></div><div class="hiddendiv common"></div><div class="drag-target" data-sidenav="nav-mobile" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><iframe name="oauth2relay579375173" id="oauth2relay579375173" src="cid:frame-7-5b215950-78ac-4f9d-a490-2dde82d94495@mhtml.blink" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>------MultipartBoundary--TwTERZ0NCbGIHbieVfPVCBtanmpGdiMPDwhS3g2tT3----

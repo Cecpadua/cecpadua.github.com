@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>意大利帕多瓦华人基督教会</title>
-
+  <title>意大利帕多瓦华人教会</title>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">意大利帕多瓦华人基督教会</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+<body>
+  
+  <nav class="white navbar-fixed" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><b class="title">意大利帕多瓦华人教会</b></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">主页</a></li>
+		<!-- Dropdown Trigger -->
+		<li><a class="dropdown-button" data-beloworigin="true" href="#" data-activates="notice">教会动态</a></li>
+		<!-- Dropdown Structure -->
+		<ul id="notice" class="dropdown-content">
+		  <li><a href="#!">大堂敬拜</a></li>
+		  <li class="divider"></li>
+		  <li><a href="youth">青少年团契</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#!">三</a></li>
+		  <li class="divider"></li>
+		</ul>
+		
+		<li><a href="youth/index.html">相册</a></li>
+		<li><a href="about.html">关于</a></li>
       </ul>
+      
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-
+  <ul id="nav-mobile" class="side-nav">
+	<li><a href="#">Navbar Link</a></li>
+  </ul>
+  
+  
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
@@ -40,7 +56,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="background.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -89,7 +105,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="background.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -115,7 +131,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="background.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
   <footer class="page-footer teal">
@@ -156,7 +172,10 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
